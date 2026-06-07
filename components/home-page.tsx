@@ -1200,6 +1200,138 @@ export const HomePage: React.FC<HomePageProps> = ({ setTab, onEnroll, onBookCons
         </div>
       </section>
 
+      {/* SECTORS & SPECIALIZED LANDING PORTALS INDEX */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 py-12">
+        <div className="text-center space-y-3">
+          <span className="text-xs font-extrabold tracking-widest text-[#0066FF] uppercase font-mono bg-blue-50 px-2.5 py-1 rounded">Sectors &amp; Channels</span>
+          <h2 className="font-heading font-black text-2xl sm:text-3xl text-slate-800">
+            Natton SkillX Specialized Divisions
+          </h2>
+          <p className="text-sm text-slate-500 max-w-2xl mx-auto font-sans leading-relaxed">
+            Explore our custom high-converting hubs tailored directly for target demographics — school leaders, academic instructors, parents, professionals, and corporate CSR stakeholders.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              title: 'Free AI School Workshop',
+              slug: '/free-ai-awareness-workshop',
+              audience: 'Principals / Management / Teachers',
+              headline: 'Bring AI Awareness to Your School — Absolutely FREE',
+              desc: 'Empower students and educators with NEP-aligned certifications, live prompting, and school AI readiness audits.',
+              icon: School,
+              color: 'border-l-blue-500 text-blue-600',
+              badgeBg: 'bg-blue-50 text-blue-700',
+            },
+            {
+              title: 'School Annual Partnership',
+              slug: '/school-partnership-program',
+              audience: 'School Leaders / Educational Institutions',
+              headline: 'Become a Future-Ready School Ecosystem',
+              desc: 'Comprehensive annual training integration including continuous educator workshops, curriculum updates, and student labs.',
+              icon: Layers,
+              color: 'border-l-indigo-500 text-indigo-600',
+              badgeBg: 'bg-indigo-50 text-indigo-700',
+            },
+            {
+              title: 'AI for Teachers Workshop',
+              slug: '/ai-for-teachers',
+              audience: 'Teachers / Academic Coordinators',
+              headline: 'Transform Your Teaching with Artificial Intelligence',
+              desc: 'Master automated grading, instant lesson plan generation, and engaging quiz prompt designs to save hours of daily prep.',
+              icon: GraduationCap,
+              color: 'border-l-cyan-500 text-cyan-600',
+              badgeBg: 'bg-cyan-50 text-cyan-700',
+            },
+            {
+              title: 'AI Foundations for Students',
+              slug: '/ai-foundations-for-students',
+              audience: 'Students Grade 6-12 / Parents',
+              headline: 'Build Future Skills with Artificial Intelligence early',
+              desc: 'Dynamic text-to-art generation classes, python coding structure, and early logical analysis tools with project galleries.',
+              icon: Target,
+              color: 'border-l-orange-500 text-orange-600',
+              badgeBg: 'bg-orange-50 text-orange-700',
+            },
+            {
+              title: 'Career Counselling Assessment',
+              slug: '/career-counselling',
+              audience: 'Parents / Class 6-12 Students',
+              headline: 'Discover the Right Career Path with Confidence',
+              desc: 'Scientific diagnostic assessments, emotional and stream matchmaking matrices, and direct counselor consultations.',
+              icon: Compass,
+              color: 'border-l-emerald-500 text-emerald-600',
+              badgeBg: 'bg-emerald-50 text-emerald-700',
+            },
+            {
+              title: 'ChatGPT Mastery Pro',
+              slug: '/chatgpt-mastery',
+              audience: 'Professionals / Business Owners / Solopreneurs',
+              headline: 'Master ChatGPT & Professional AI Productivity',
+              desc: 'Upgrade workflow speeds by up to 3.5x. Automate database, spreadsheet, slide design, and marketing tasks effortlessly.',
+              icon: Briefcase,
+              color: 'border-l-slate-800 text-slate-800',
+              badgeBg: 'bg-slate-100 text-slate-800',
+            },
+            {
+              title: 'CSR & NGO Partnership',
+              slug: '/csr-ngo-partnerships',
+              audience: 'CSR Leaders / Philanthropic Trusts',
+              headline: 'Empowering Communities Through Digital Literacy',
+              desc: 'Co-aligned pilots together with Raitamitra Social Trust targeting rural tech awareness, women financial agility and lab setups.',
+              icon: Heart,
+              color: 'border-l-rose-500 text-rose-600',
+              badgeBg: 'bg-rose-50 text-rose-700',
+            }
+          ].map((item, idx) => {
+            const Icon = item.icon;
+            return (
+              <motion.div
+                key={idx}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className={`bg-white border border-slate-100 border-l-4 ${item.color} rounded-2xl p-6 shadow-xs flex flex-col justify-between space-y-4 hover:shadow-md transition-shadow text-left`}
+              >
+                <div className="space-y-3">
+                  <div className="flex justify-between items-start gap-2">
+                    <div className="w-9 h-9 rounded-xl bg-slate-50 flex items-center justify-center text-slate-650 shrink-0">
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <span className={`text-[9px] font-mono font-black uppercase tracking-wider px-2 py-0.5 rounded ${item.badgeBg}`}>
+                      {item.audience}
+                    </span>
+                  </div>
+                  
+                  <div className="space-y-1">
+                    <h3 className="font-heading font-extrabold text-sm text-slate-800">
+                      {item.title}
+                    </h3>
+                    <h4 className="text-xs font-bold text-slate-500 font-sans leading-tight">
+                      {item.headline}
+                    </h4>
+                  </div>
+                  
+                  <p className="text-xs text-slate-500 font-sans leading-relaxed">
+                    {item.desc}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-slate-50">
+                  <a
+                    href={item.slug}
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 hover:text-blue-500 hover:underline transition-colors animate-pulse"
+                  >
+                    <span>Launch Portal</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* FOOTER CTA SECTION */}
       <section className="bg-gradient-to-r from-[#0A2540] to-blue-900 border border-slate-800 text-white rounded-3xl p-8 sm:p-12 text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative overflow-hidden shadow-2xl">
         <div className="absolute top-0 right-0 p-12 bg-[#00D4FF]/10 blur-3xl rounded-full" />
