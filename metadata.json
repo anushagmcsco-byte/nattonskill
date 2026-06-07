@@ -1,0 +1,6 @@
+{
+  "name": "Natton SkillX",
+  "description": "Empowering Students, Professionals, Educators and Communities to thrive in the age of Artificial Intelligence through AI Education, Future Skills, Career Transformation, and Social Impact.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
